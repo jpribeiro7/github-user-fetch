@@ -1,0 +1,19 @@
+{
+  "name": "github-user-info",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node dist/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.2.1",
+    "commander": "^10.0.1",
+    "typescript": "^5.0.4"
+  }
+}
