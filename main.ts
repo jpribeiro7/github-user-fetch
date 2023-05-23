@@ -1,5 +1,5 @@
 
-import { getUser } from './src/userService'
+import { getUser, getUserRepos } from './src/userService'
 import { Command } from 'commander'
 
 const commander  = new Command();
@@ -13,9 +13,9 @@ commander.option('-f, --fetch-user <type>','Get user information from Github and
 commander.parse(process.argv);
 const options = commander.opts();
 
-let argValue = undefined;
+let argValue:string = undefined;
 if (options.fetchUser){
+    console.log('here', options.fetchUser);
     argValue = options.fetchUser;
-    const user = getUser(argValue);
-    console.log(user);
+    const user = getUser(argValue).then(response => getUserRepos(argValue)).then((response) => {console.log(response)})
 }
